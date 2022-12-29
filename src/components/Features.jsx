@@ -3,7 +3,7 @@ import { Box, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Img 
 
 const Features = () => {
     return (
-        <Box mt='20' mb='10' >
+        <Box marginTop='130px' mb='10' >
             <Box width='50%'>
                 <Heading 
                     color='#000'
@@ -19,7 +19,7 @@ const Features = () => {
                 </Text>
             </Box>
 
-            <Box bgColor='#F5F5F5' px='20' paddingBlock='40px' mt='10' borderRadius='10px'>
+            <Box bgColor='#F5F5F5' px='20' paddingTop='40px' mt='10' borderRadius='10px'>
             <Tabs variant='solid-rounded' colorScheme='gray'>
             <TabList>
                 <Tab py='4' px='6' mr='4'>Lending</Tab>
@@ -28,12 +28,12 @@ const Features = () => {
                 <Tab py='4' px='6' mr='4'>Payments</Tab>
             </TabList>
             <TabPanels>
-                <TabPanel>
+                <TabPanel pb='0'>
                     <Box 
                         display='grid' 
                         gridTemplateColumns='55% 45%' 
                         columnGap='20px'
-                        py='20'
+                        pt='20'
                         position='relative'
                     >
                         <Box>
@@ -67,24 +67,24 @@ const Features = () => {
                                 <ArrowForwardIcon ml='3'/>
                             </Flex>
                         </Box>
-                        <Img src='../lending.svg' width='100%' />
+                        <Img src='../lending.svg' width='100%' height='100%' />
                         <Img 
                             src='../carbon-logo.svg'
                             position='absolute'
                             top='25px'
                             right='-50px' 
-                        backgroundColor='#fff'
-                        padding='35px'
-                        borderRadius='50%'
+                            backgroundColor='#fff'
+                            padding='35px'
+                            borderRadius='50%'
                         />
                     </Box>
                 </TabPanel>
-                <TabPanel>
+                <TabPanel pb='0'>
                     <Box 
                         display='grid' 
                         gridTemplateColumns='55% 45%' 
                         columnGap='20px'
-                        py='20'
+                        pt='20'
                         position='relative'
                     >
                         <Box>
@@ -131,12 +131,12 @@ const Features = () => {
                         />
                     </Box>
                 </TabPanel>
-                <TabPanel>
+                <TabPanel pb='0'>
                     <Box 
                         display='grid' 
                         gridTemplateColumns='55% 45%' 
                         columnGap='20px'
-                        py='20'
+                        pt='20'
                         position='relative'
                     >
                         <Box>
@@ -178,12 +178,12 @@ const Features = () => {
                         />
                     </Box>
                 </TabPanel>
-                <TabPanel>
+                <TabPanel pb='0'>
                     <Box 
                         display='grid' 
                         gridTemplateColumns='55% 45%' 
                         columnGap='20px'
-                        py='20'
+                        pt='20'
                         position='relative'
                     >
                         <Box>

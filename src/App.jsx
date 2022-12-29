@@ -2,8 +2,11 @@ import { Box } from '@chakra-ui/react'
 import useMediaQuery from 'beautiful-react-hooks/useMediaQuery';
 import CustomerLogos from './components/CustomerLogos'
 import Features from './components/Features';
+import Footer from './components/Footer';
+import GettingStarted from './components/GettingStarted';
 import HeroSection from './components/HeroSection'
 import Products from './components/Products';
+import Slider from './components/Slider';
 import TheHeader from './components/TheHeader'
 
 
@@ -22,13 +25,17 @@ const App = () => {
   }
 
   return (
-    <Box mx='auto' paddingInline={hPadding} maxWidth='1800px'>
-      <TheHeader />
-      <HeroSection />
-      <CustomerLogos />
-      <Products />
-      <Features />
-      
+    <Box mx='auto'>
+      <Box paddingInline={hPadding} maxWidth='1800px'>
+        <TheHeader />
+        <HeroSection />
+        <CustomerLogos />
+        <Products />
+        <Features />
+        <Slider />
+      </Box>
+      <GettingStarted />
+      <Footer />
     </Box>
   )
 }
