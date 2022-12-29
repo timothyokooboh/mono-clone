@@ -36,13 +36,12 @@ const TheHeader = () => {
             justifyContent='space-between' 
             alignItems='center'
             py='5'
-            px='40'
         >
             <Img src='../logo.svg' />
             <Flex alignItems='center'>
                 {
                     MENU_ITEMS.map(menu => (
-                        <Popover trigger="hover">
+                        <Popover trigger="hover" key={menu.id}>
                             <PopoverTrigger>
                                 <Button 
                                     variant='ghost' 
@@ -67,10 +66,10 @@ const TheHeader = () => {
                                             <Flex 
                                                 alignItems='center' 
                                                 key={item.title} 
-                                                mb='5'
+                                                mt='5'
+                                                mb='6'
                                                 cursor='pointer'
-                                                px='4'
-                                                py='3'
+                                                px='4'        
                                             >
                                                 <img src={item.img} mr='3' />
                                                 <Box>

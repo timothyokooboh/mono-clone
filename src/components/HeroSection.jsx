@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowForwardIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, Tag, Text } from "@chakra-ui/react";
+import useGetMediaQuery from "../hooks/useGetMediaQuery";
 
 const InfoButton = () => {
     const [isHovering, setIsHovering] = useState(false)
@@ -91,13 +92,15 @@ const ContactSalesBtn = () => {
 }
 
 const HeroSection = () => {
+    const mediaQuery = useGetMediaQuery()
+
     return (
         <Box 
             display='grid' 
             gridTemplateColumns='1fr 1fr' 
             columnGap='40px'
             style={{marginTop: '100px'}}
-            px='40'
+            mb='20'
         >
             <Box>
                 <InfoButton />
@@ -106,7 +109,7 @@ const HeroSection = () => {
                     pt='10'
                     fontSize='70px'
                 >
-                    Reliably access <br />bank accounts
+                    Reliably access bank accounts
                 </Heading>
                 <Text 
                     fontSize='22px' 
@@ -122,7 +125,8 @@ const HeroSection = () => {
                     <ContactSalesBtn />
                 </Flex>
             </Box>
-            <Box></Box>
+            <Box>
+            </Box>
         </Box>
     )
 }
