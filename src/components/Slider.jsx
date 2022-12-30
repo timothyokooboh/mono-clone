@@ -1,11 +1,57 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, Text, Icon, Img, IconButton} from "@chakra-ui/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {FaQuoteLeft} from 'react-icons/fa'
 import style from '../styles/Slider.module.css'
+import '../index.css'
 
 const Slider = () => {
     const [viewingFirstSlide, setViewingFirstSlide] = useState(true);
+    const firstSectionRef = useRef('first-section')
+    const secondSectionRef = useRef('second-section')
+
+    const handleClickForPrevSlide = () => {
+        console.log(firstSectionRef.current)
+        console.log(secondSectionRef.current)
+
+        secondSectionRef.current.classList.toggle('hidden')
+        secondSectionRef.current.classList.toggle('grid')
+        firstSectionRef.current.classList.toggle('farLeft')
+        secondSectionRef.current.classList.toggle('farRight')
+
+        setViewingFirstSlide(true)
+
+        setTimeout(() => {
+            firstSectionRef.current.classList.toggle('hidden')
+            firstSectionRef.current.classList.toggle('grid')
+            console.log(firstSectionRef.current)
+            console.log(secondSectionRef.current)
+        }, 1000)
+
+
+    }
+
+    const handleClickForNextSlide = () => {
+        console.log('next slide')
+        console.log(firstSectionRef.current)
+        console.log(secondSectionRef.current)
+
+       
+        secondSectionRef.current.classList.toggle('hidden')
+        secondSectionRef.current.classList.toggle('grid')
+        firstSectionRef.current.classList.toggle('farLeft')
+        
+        secondSectionRef.current.classList.toggle('farRight')
+
+        setViewingFirstSlide(false)
+
+        setTimeout(() => {
+            firstSectionRef.current.classList.toggle('hidden')
+            firstSectionRef.current.classList.toggle('grid')
+            console.log(firstSectionRef.current)
+            console.log(secondSectionRef.current)
+        }, 2000)
+    }
 
     return (
         <Box>
@@ -31,18 +77,15 @@ const Slider = () => {
                 mb='20' 
                 overflow='hidden' 
                 scrollBehavior='smooth'
+                height='800px'
             >
                 <Box
-                    display='grid'
+                    width='100%'
                     gridTemplateColumns='1fr 1fr'
                     columnGap='20px'
                     mt='20'
-                    scrollBehavior='smooth'
-                    scrollSnapType='x mandatory'
-                    transform={viewingFirstSlide ? 'translateX(0)' : 'translateX(-100vw)'}
-                    width={viewingFirstSlide ? '100%' : '0%'}
-                    transition='width 1s ease, transform 1s ease'
-                    className={style.slider}
+                    ref={firstSectionRef}
+                    className={`grid ${style.firstSectionRef}`}
                 >
                     <Box 
                         bgColor='#F5F5F5'
@@ -144,19 +187,13 @@ const Slider = () => {
                     </Box>
                 </Box>
 
-                 <Box
-                    display='grid'
-                    justifyContent='space-between' 
+                <Box
+                    width='100%'
                     gridTemplateColumns='1fr 1fr'
                     columnGap='20px'
                     mt='20'
-                    scrollBehavior='smooth'
-                    scrollSnapType='x mandatory'
-                    transform={viewingFirstSlide ? 'translateX(100vw)' : 'translateX(0)'}
-                    width={viewingFirstSlide ? '0%' : '100%'}
-                    height='800px'
-                    transition='width 1s ease, transform 1s ease'
-                    className={style.slider}
+                    ref={secondSectionRef}
+                    className={`hidden farRight ${style.secondSectionRef} `}
                 >
                     <Box 
                         bgColor='#F5F5F5'
@@ -292,7 +329,7 @@ const Slider = () => {
                         mr='3'
                         borderRadius='50%'
                         disabled={viewingFirstSlide === true}
-                        onClick={() => setViewingFirstSlide(true)}
+                        onClick={handleClickForPrevSlide}
                     />
                     <IconButton 
                         aria-label='switch slide'
@@ -305,7 +342,7 @@ const Slider = () => {
                         size='lg'
                         borderRadius='50%'
                         disabled={viewingFirstSlide === false}
-                        onClick={() => setViewingFirstSlide(false)}
+                        onClick={handleClickForNextSlide}
                     />
                 </Flex>
             </Flex>

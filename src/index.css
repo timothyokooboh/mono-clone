@@ -7,6 +7,21 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: red;
     height: 100vh
+}
+
+.grid {
+    display: grid;
+}
+
+.hidden {
+    display: none;
+}
+
+.farLeft {
+    transform: translateX(-100vw);
+}
+
+.farRight {
+    transform: translateX(100vw);
 }

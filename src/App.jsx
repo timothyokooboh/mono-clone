@@ -31,7 +31,7 @@ const App = () => {
           <CustomerLogos />
           <Products />
           <Features />
-          {/* <Slider /> */}
+          <Slider />
         </Box>
       </Box>
 

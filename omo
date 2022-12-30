@@ -1,0 +1,6 @@
+scrollBehavior='smooth'
+                    scrollSnapType='x mandatory'
+                    transform={viewingFirstSlide ? 'translateX(0)' : 'translateX(-100vw)'}
+                    width={viewingFirstSlide ? '100%' : '0%'}
+                    transition='width 1s ease, transform 1s ease'
+                    className={style.slider}
