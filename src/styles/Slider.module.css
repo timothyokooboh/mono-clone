@@ -1,0 +1,48 @@
+@media only screen and (max-width: 1300px) {
+    div.headingSection {
+        width: 90%;
+    }
+    h2.heading {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div.headingSection {
+        width: 100%;
+    }
+    h2.heading {
+        font-size: 40px;
+    }
+
+    p.quote {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    h2.heading {
+        font-size: 30px;
+    }
+    p.headingContent {
+        font-size: 16px;
+    }
+
+    p.quote {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    div.slider {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        height: auto;
+}
+}
+
+@media only screen and (max-width: 500px) {
+    h2.heading {
+        font-size: 22px;
+    }
+}

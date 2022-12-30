@@ -1,0 +1,21 @@
+div.navDrawer {
+    display: block;
+}
+
+@media only screen and (min-width: 1025px) {
+    div.navDrawer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    div.mobileMenuList {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.mobileMenuList {
+        width: 90%;
+    }
+}

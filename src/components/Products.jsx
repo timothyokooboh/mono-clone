@@ -164,7 +164,7 @@ const Products = () => {
                         >
                             Percept
                         </Heading>
-                        <Text color='#FFF' pt='5' pb='8' perceptDescription>
+                        <Text color='#FFF' pt='5' pb='8' className={style.perceptDescription}>
                         Money operations and reconciliation for all your 
                         corporate accounts, in one dashboard
                         </Text>

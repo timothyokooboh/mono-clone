@@ -1,31 +1,34 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Divider, Flex, Heading, Img, Text } from "@chakra-ui/react";
 import { company, products, resources, legal } from "../config/footerDetails";
+import style from '../styles/Footer.module.css'
 
 const Footer = () => {
     return (
-        <Box bgColor='#000' px='40'>
+        <Box bgColor='#000' px='40' className={style.footer}>
             <Box 
                 textAlign='center' 
                 display='flex'
                 flexDirection='column' 
                 alignItems='center'
             >
-                <Box pt='40' mb='12' width='40%'>
+                <Box pt='40' mb='12' width='70%' className={style.headingSection}>
                     <Heading 
                         color='#FFF'
-                        fontSize='30px'
+                        fontSize='60px'
                         pb='5'
+                        as='h2'
+                        className={style.heading}
                     >
                         Start building with Mono
                     </Heading>
-                    <Text color='#FFF' fontSize='22px'>
+                    <Text color='#FFF' fontSize='25px' className={style.content}>
                         Access high-quality financial data and start 
                         processing payments directly from bank accounts 
                         in minutes.
                     </Text>
                 </Box>
-                <Flex mb='20'>
+                <Flex mb='20' className={style.footerBtnSection}>
                     <Button
                         bgColor='#0055BA' 
                         color='#FFF' 
@@ -33,6 +36,7 @@ const Footer = () => {
                         mr='3'
                         py='6'
                         borderRadius='10px'
+                        className={style.footerBtns}
                     >
                         <Flex>
                             <Text>Start now for free</Text>
@@ -45,6 +49,7 @@ const Footer = () => {
                         _hover={{backgroundColor: '#202020'}}
                         py='6'
                         borderRadius='10px'
+                        className={style.footerBtns}
                     >
                         <Flex>
                             <Text>Talk to sales</Text>
@@ -63,13 +68,12 @@ const Footer = () => {
 
             <Box pb='10'>
                 <Box 
-                    display='grid'
-                    gridTemplateColumns='repeat(4, 1fr)'
-                    columnGap='20px'
+                    display='flex'
+                    flexWrap='wrap'
                     justifyContent='space-between'
                     mb='20'
                 >
-                    <Box color='#FFF'>
+                    <Box color='#FFF' mb='8' mr='8'>
                         <Text color='#969696'>Products</Text>
                         {
                             products.map((product, idx) => (
@@ -77,7 +81,7 @@ const Footer = () => {
                             ))
                         }
                     </Box>
-                    <Box color='#FFF'>
+                    <Box color='#FFF' mb='8' mr='8'>
                         <Text color='#969696'>Resources</Text>
                         {
                             resources.map((resource, idx) => (
@@ -85,7 +89,7 @@ const Footer = () => {
                             ))
                         }
                     </Box>
-                    <Box color='#FFF'>
+                    <Box color='#FFF' mb='8' mr='8'>
                         <Text color='#969696'>Company</Text>
                         {
                             company.map((company, idx) => (
@@ -110,20 +114,20 @@ const Footer = () => {
                 />
             </Box>
             
-            <Flex justifyContent='space-between' alignItems='center' pb='20'>
-                <Flex alignItems='center'>
-                    <Img src='../white-mono.svg' mr='3'/>
+            <Flex justifyContent='space-between' alignItems='center' pb='20' className={style.socialIcons}>
+                <Flex alignItems='center' className={style.companyLogoSection}>
+                    <Img src='../white-mono.svg' mr='10'/>
                     <Text color='#FFF'>
                         &copy; Mono Technologies Nigeria Limited
                     </Text>
                 </Flex>
                 <Flex alignItems='center'>
-                    <Flex mr='3' alignItems='center'>
+                    <Flex mr='3' alignItems='center'  cursor='pointer'>
                         <Img src='../twitter.svg' mr='2'/>
                         <Text color='#FFF'>Twitter</Text>
                     </Flex>
                     <Box width='3px' height='3px' bgColor='#FFF' borderRadius='50%' mr='3'></Box>
-                    <Flex alignItems='center'>
+                    <Flex alignItems='center' cursor='pointer'>
                         <Img src='../linkedin.svg' mr='2'/>
                         <Text color='#FFF'>Linkedin</Text>
                     </Flex>

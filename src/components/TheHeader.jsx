@@ -16,12 +16,17 @@ import {
     PopoverCloseButton,
     PopoverHeader,
     PopoverBody,
+    IconButton,
+    ModalCloseButton,
    
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import { useState } from "react";
 import MENU_ITEMS from '../config/menuItems'
-
+import { FiMenu } from "react-icons/fi";
+import style from '../styles/TheHeader.module.css'
+import HamburgerMenu from "./HamburgerMenu";
+import { AiOutlineClose } from "react-icons/ai";
 const MenuGridStyle = { 
     display: 'grid', 
     gridTemplateColumns: '1fr 1fr', 
@@ -30,15 +35,16 @@ const MenuGridStyle = {
     alignItems: 'center'
 }
 
-const TheHeader = () => {
+const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
     return (
         <Flex 
             justifyContent='space-between' 
             alignItems='center'
             py='5'
+            className={isNavDrawerOpen ? style.fixedNav : ''}
         >
             <Img src='../logo.svg' />
-            <Flex alignItems='center'>
+             <Flex alignItems='center' className={style.menuLinks}>
                 {
                     MENU_ITEMS.map(menu => (
                         <Popover trigger="hover" key={menu.id}>
@@ -71,7 +77,7 @@ const TheHeader = () => {
                                                 cursor='pointer'
                                                 px='4'        
                                             >
-                                                <img src={item.img} mr='3' />
+                                                <Img src={item.img} mr='3' />
                                                 <Box>
                                                     <Heading 
                                                         fontSize='15px' 
@@ -89,6 +95,7 @@ const TheHeader = () => {
                 }
                 
             </Flex>
+            
             <Button 
                 bgColor='#0055BA' 
                 color='#FFF' 
@@ -97,9 +104,24 @@ const TheHeader = () => {
                 borderRadius='10px'
                 _hover={{bgColor: 'blue.700', transform: "translateY(-1px)"}}
                 transition='all .2s'
+                className={style.signInBtn}
             >
                 Sign in
             </Button>
+            
+            {isNavDrawerOpen ? <IconButton 
+                aria-label='menu'
+                icon={<AiOutlineClose/>}
+                className={style.menuBtn}
+                variant='ghost'
+                onClick={() => setIsNavDrawerOpen(false)}
+            /> :  <IconButton 
+                aria-label='menu'
+                icon={<FiMenu />}
+                className={style.menuBtn}
+                variant='ghost'
+                onClick={() => setIsNavDrawerOpen(true)}
+            /> }
         </Flex>
 
     )

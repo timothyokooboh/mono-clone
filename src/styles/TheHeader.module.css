@@ -1,0 +1,33 @@
+button.signInBtn,
+div.menuLinks {
+    display: flex;
+}
+
+button.menuBtn {
+    display: none;;
+}
+
+
+@media only screen and (max-width: 1025px) {
+    .fixedNav {
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        left: 0;
+        padding-inline: 35px;
+        z-index: 9999;
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 1025px) {
+    button.signInBtn,
+    div.menuLinks {
+        display: none;
+    }
+    button.menuBtn {
+        display: flex;
+    }
+}

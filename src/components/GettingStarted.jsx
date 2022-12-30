@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Icon, Img, Text } from "@chakra-ui/react";
+import style from "../styles/GettingStarted.module.css";
 import {FiArrowUpRight} from 'react-icons/fi'
 
 const GettingStarted = () => {
@@ -9,10 +10,13 @@ const GettingStarted = () => {
             backgroundPosition='center'
             py='40'
             paddingInline='140px'
+            className={style.gettingStarted}
         >
             <Heading 
                 color='#FFF'
                 fontSize='60px'
+                as='h2'
+                className={style.heading}
             >
                 Getting started
             </Heading>
@@ -29,13 +33,16 @@ const GettingStarted = () => {
                     display='grid'
                     gridTemplateColumns='1fr 1fr'
                     columnGap='30px'
+                    className={style.powerfulApis}
                 >
-                    <Box>
+                    <Box className={style.headingContainer}>
                         <Heading 
                             color='#000'
                             fontSize='52px'
                             pt='5'
                             pb='8'
+                            as='h3'
+                            className={style.mainFeature}
                         >
                             Powerful APIs and easy-to-use resources
                         </Heading>
@@ -59,6 +66,7 @@ const GettingStarted = () => {
                 display='grid'
                 gridTemplateColumns='repeat(3, 1fr)'
                 columnGap='20px'
+                className={style.otherFeatures}
             >
                 <Box
                     bgColor='#FFF'
@@ -67,7 +75,7 @@ const GettingStarted = () => {
                     borderRadius='15px' 
                 >
                     <Img src='../plug.svg' />
-                    <Heading fontSize='30px' py='4'>Plug-and-play SDKs</Heading>
+                    <Heading fontSize='30px' py='4' as='h3' className={style.otherFeaturesTitle}>Plug-and-play SDKs</Heading>
                     <Flex 
                         alignItems='center' 
                         color='#0759BC' 
@@ -88,7 +96,7 @@ const GettingStarted = () => {
                     borderRadius='15px' 
                 >
                     <Img src='../beautiful-ux.svg' />
-                    <Heading fontSize='30px' py='4'>Beautiful seamless UX</Heading>
+                    <Heading fontSize='30px' py='4' as='h3' className={style.otherFeaturesTitle}>Beautiful seamless UX</Heading>
                     <Flex 
                         alignItems='center' 
                         color='#0759BC' 
@@ -109,7 +117,7 @@ const GettingStarted = () => {
                     borderRadius='15px' 
                 >
                     <Img src='../support.svg' />
-                    <Heading fontSize='30px' py='4'>Always-on support</Heading>
+                    <Heading fontSize='30px' py='4' as='h3' className={style.otherFeaturesTitle}>Always-on support</Heading>
                     <Flex 
                         alignItems='center' 
                         color='#0759BC' 

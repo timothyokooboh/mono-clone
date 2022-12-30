@@ -1,0 +1,76 @@
+@media only screen and (max-width: 1300px) {
+    div.gettingStarted {
+        padding-inline: 100px;
+    }
+    h2.heading {
+        font-size: 50px;
+    }
+    h3.mainFeature {
+        font-size: 45px;
+    }
+    div.headingContainer {
+        padding-bottom: 40px;
+    }
+
+    h3.otherFeaturesTitle {
+        font-size: 28px;
+    }
+} 
+
+@media only screen and (max-width: 1000px) {
+    div.gettingStarted {
+        padding-inline: 80px;
+    }
+    h2.heading {
+        font-size: 45px;
+    }
+
+    h3.mainFeature {
+        font-size: 35px;
+    }
+
+    div.powerfulApis {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+} 
+
+@media only screen and (max-width: 800px) {
+    div.otherFeatures {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    h3.otherFeaturesTitle {
+        font-size: 22px;
+    }
+} 
+
+@media only screen and (max-width: 700px) {
+    div.gettingStarted {
+        padding-inline: 40px;
+    }
+    h2.heading {
+        font-size: 35px;
+    }
+
+    h3.mainFeature {
+        font-size: 30px;
+    }
+} 
+
+@media only screen and (max-width: 500px) {
+    div.gettingStarted {
+        padding-inline: 20px;
+    }
+    h2.heading {
+        font-size: 30px;
+    }
+    h3.mainFeature {
+        font-size: 22px;
+    }
+    h3.otherFeaturesTitle {
+        font-size: 18px;
+    }
+
+} 

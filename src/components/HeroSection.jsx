@@ -51,13 +51,11 @@ const GetStartedBtn = () => {
             mr='4'
             borderRadius='10px'
             _hover={{bgColor: '#0055BA'}}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
             className={style.getStarted}
         >
             <Box 
                 as='span' 
-                pr={isHovering ? '4' : '3'}
+                pr='3'
                 transition='all .1s'
             >
                 Get started for free
@@ -79,12 +77,11 @@ const ContactSalesBtn = () => {
             className={style.contactSales}
             borderRadius='10px'
             _hover={{bgColor: '#F5F5F5'}}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
+      
         >
             <Box 
                 as='span' 
-                pr={isHovering ? '4' : '3'}
+                pr='3'
                 transition='all .1s'
             >
                 Contact Sales

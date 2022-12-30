@@ -2,6 +2,7 @@ import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, Text, Icon, Img, IconButton} from "@chakra-ui/react";
 import { useState } from "react";
 import {FaQuoteLeft} from 'react-icons/fa'
+import style from '../styles/Slider.module.css'
 
 const Slider = () => {
     const [viewingFirstSlide, setViewingFirstSlide] = useState(true);
@@ -12,14 +13,17 @@ const Slider = () => {
                 width='50%' 
                 marginBlockStart='120px' 
                 marginBlockEnd='20px'
+                className={style.headingSection}
             >
                 <Heading
+                    as='h2'
                     fontSize='60px'
                     pb='5'
+                    className={style.heading}
                 >
                     Why market leaders are choosing Mono
                 </Heading>
-                <Text fontSize='24px'>Here's what some of them are saying.</Text>
+                <Text fontSize='24px' className={style.headingContent}>Here's what some of them are saying.</Text>
             </Box>
 
             <Flex 
@@ -27,11 +31,9 @@ const Slider = () => {
                 mb='20' 
                 overflow='hidden' 
                 scrollBehavior='smooth'
-                counterReset='carousel'
             >
                 <Box
                     display='grid'
-                    justifyContent='space-between' 
                     gridTemplateColumns='1fr 1fr'
                     columnGap='20px'
                     mt='20'
@@ -39,8 +41,8 @@ const Slider = () => {
                     scrollSnapType='x mandatory'
                     transform={viewingFirstSlide ? 'translateX(0)' : 'translateX(-100vw)'}
                     width={viewingFirstSlide ? '100%' : '0%'}
-                    height='800px'
                     transition='width 1s ease, transform 1s ease'
+                    className={style.slider}
                 >
                     <Box 
                         bgColor='#F5F5F5'
@@ -52,9 +54,9 @@ const Slider = () => {
                         <figure 
                             style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                             <blockquote>
-                                <Box paddingBottom='100px' fontSize='30px'>
-                                    <Icon as={FaQuoteLeft} mb='6'/>
-                                    <Text fontSize='40px' fontWeight='bold'>
+                                <Box paddingBottom='50px'>
+                                    <Icon as={FaQuoteLeft} fontSize='30px' mb='6'/>
+                                    <Text fontSize='40px' fontWeight='bold' className={style.quote}>
                                     It's important to go with a data provider that 
                                     inspires confidence in users to give consent to share 
                                     their data; this is one of our favourite things 
@@ -102,9 +104,9 @@ const Slider = () => {
                             style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}
                         >
                             <blockquote>
-                                <Box paddingBottom='100px' fontSize='30px'>
-                                    <Icon as={FaQuoteLeft} mb='6'/>
-                                    <Text fontSize='40px' fontWeight='bold'>
+                                <Box paddingBottom='50px'>
+                                    <Icon as={FaQuoteLeft} mb='6' fontSize='30px'/>
+                                    <Text fontSize='40px' fontWeight='bold' className={style.quote}>
                                     The onboarding and integration process with Mono 
                                     was smooth. Our Engineering and Product teams use 
                                     the dashboard to oversee our statement collection process.
@@ -142,7 +144,7 @@ const Slider = () => {
                     </Box>
                 </Box>
 
-                <Box
+                 <Box
                     display='grid'
                     justifyContent='space-between' 
                     gridTemplateColumns='1fr 1fr'
@@ -154,6 +156,7 @@ const Slider = () => {
                     width={viewingFirstSlide ? '0%' : '100%'}
                     height='800px'
                     transition='width 1s ease, transform 1s ease'
+                    className={style.slider}
                 >
                     <Box 
                         bgColor='#F5F5F5'
@@ -165,9 +168,9 @@ const Slider = () => {
                         <figure 
                             style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                             <blockquote>
-                                <Box paddingBottom='100px' fontSize='30px'>
-                                    <Icon as={FaQuoteLeft} mb='6'/>
-                                    <Text fontSize='40px' fontWeight='bold'>
+                                <Box paddingBottom='50px'>
+                                    <Icon as={FaQuoteLeft} mb='6' fontSize='30px'/>
+                                    <Text fontSize='40px' fontWeight='bold' className={style.quote}>
                                         We can trust Mono over 90% of the time which 
                                         is better than our previous provider. 
                                         This ease & reliability are our favourite 
@@ -215,9 +218,9 @@ const Slider = () => {
                             style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}
                         >
                             <blockquote>
-                                <Box paddingBottom='100px' fontSize='30px'>
-                                    <Icon as={FaQuoteLeft} mb='6'/>
-                                    <Text fontSize='40px' fontWeight='bold'>
+                                <Box paddingBottom='50px'>
+                                    <Icon as={FaQuoteLeft} mb='6' fontSize='30px'/>
+                                    <Text fontSize='40px' fontWeight='bold' className={style.quote}>
                                     Migrating to Mono was seamless... 
                                     The simplicity and stability of the 
                                     Mono SDKs are top-notch.
@@ -253,7 +256,7 @@ const Slider = () => {
                             </figcaption>
                         </figure>
                     </Box>
-                </Box>
+                </Box> 
             </Flex>
 
             <Flex 

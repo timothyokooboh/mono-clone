@@ -1,0 +1,49 @@
+@media only screen and (max-width: 1300px) {
+    div.footer {
+        padding-inline: 30px;
+    }
+    h2.heading {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    h2.heading {
+        font-size: 40px;
+    }
+    div.headingSection {
+        width: 100%;
+    }
+    div.footer {
+        padding-inline: 20px;
+    }
+    
+}
+@media only screen and (max-width: 800px) {
+    h2.heading {
+        font-size: 30px;
+    }
+    p.content {
+        font-size: 16px;
+    }
+
+    div.socialIcons {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    div.companyLogoSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+@media only screen and (max-width: 400px) {
+   div.footerBtnSection {
+    flex-direction: column;
+    gap:20px;
+   }
+   button.footerBtns {
+    padding-block: 10px;
+   }
+}
