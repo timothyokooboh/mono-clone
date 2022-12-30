@@ -28,7 +28,8 @@ const Features = () => {
             </Box>
 
             <Box bgColor='#F5F5F5' px='20' paddingTop='40px' mt='10' borderRadius='10px' className={style.tabContainer}>
-                <Tabs variant='solid-rounded' colorScheme='gray'>
+                <Tabs variant='solid-rounded' colorScheme='gray' 
+                >
                 <TabList className={style.tabList}>
                     <Tab py='4' px='6' mr='4' className={style.tab}>Lending</Tab>
                     <Tab py='4' px='6' mr='4' className={style.tab}>Financial Management</Tab>

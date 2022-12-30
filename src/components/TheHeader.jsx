@@ -21,7 +21,7 @@ import {
    
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MENU_ITEMS from '../config/menuItems'
 import { FiMenu } from "react-icons/fi";
 import style from '../styles/TheHeader.module.css'
@@ -36,12 +36,25 @@ const MenuGridStyle = {
 }
 
 const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
+    const rootRef = useRef(null)
+
+    useEffect(() => {
+        rootRef.current.addEventListener('wheel', (e) => {
+            if (isNavDrawerOpen) {
+                e.preventDefault();
+                e.stopPropagation();
+    
+                return false;
+            }
+        })
+    }, [isNavDrawerOpen])
     return (
         <Flex 
             justifyContent='space-between' 
             alignItems='center'
             py='5'
-            className={isNavDrawerOpen ? style.fixedNav : ''}
+            ref={rootRef}
+           
         >
             <Img src='../logo.svg' />
              <Flex alignItems='center' className={style.menuLinks}>
@@ -62,6 +75,8 @@ const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                                 border='1px solid hsla(0,0%,89.8%,.75)'
                                 width='fit-content' 
                                 minWidth='250px'
+                                opacity='ease-out .4s'
+                                borderRadius='15px'
                             >
                                 <PopoverArrow />
                                 <PopoverBody  

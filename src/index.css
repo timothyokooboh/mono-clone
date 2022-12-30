@@ -2,11 +2,13 @@
 *::after,
 *::before {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif
+    
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: red;
-    height: 100vh
+    font-family: 'Roboto', sans-serif;
+    
 }
