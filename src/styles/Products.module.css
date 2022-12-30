@@ -1,0 +1,141 @@
+
+
+h2.heading {
+    font-size: 60px;
+}
+
+p.description {
+    font-size: 22px;
+}
+
+div.headingContainer {
+    width: 50%;
+}
+
+div.connectBgContent {
+    width: 30%;
+}
+
+div.directPayBox,
+div.perceptBox {
+    width: 80%
+}
+
+div.directPayBg,
+div.connectBg,
+div.perceptBg {
+    padding-inline: 50px;
+}
+
+@media only screen and (max-width: 1200px) {
+    div.headingContainer {
+        width: 90%;
+    }
+
+    h2.heading {
+        font-size: 50px;
+    }
+
+    img.flutterImg {
+        width: 70px;
+    }
+
+    p.partnership {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div.headingContainer {
+        width: 100%;
+    }
+
+    h2.heading {
+        font-size: 40px;
+    }
+
+    p.description {
+        font-size: 20px;
+    }
+
+    div.connectBgContent {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    div.connectBgContent {
+        width: 80%;
+    }
+
+    h3.connectBgHeading {
+        font-size: 20px;
+    }
+
+    h3.directPay,
+    h3.perceptHeading {
+        font-size: 20px;
+    }
+
+    p.directPayDescription,
+    p.perceptDescription {
+        font-size: 15px;
+    }
+
+    div.directPayBox,
+    div.perceptBox {
+        width: 100%
+    }
+
+    div.directPayBg,
+    div.connectBg,
+    div.perceptBg {
+        padding-inline: 40px;
+    }
+
+    button.connectBgBtn,
+    button.directPayBtn,
+    button.perceptBtn
+    {
+        padding-block: 12px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    div.productContainer {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    img.flutterImg {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.connectBgContent {
+        width: 90%;
+    }
+
+    h2.heading {
+        font-size: 30px;
+    }
+
+    p.description {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    div.connectBgContent {
+        width: 100%;
+    }
+
+    h2.heading {
+        font-size: 22px;
+    }
+
+    p.description {
+        font-size: 14px;
+    }
+}
