@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowForwardIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, Tag, Text } from "@chakra-ui/react";
 import useGetMediaQuery from "../hooks/useGetMediaQuery";
+import style from '../styles/HeroSection.module.css'
 
 const InfoButton = () => {
     const [isHovering, setIsHovering] = useState(false)
@@ -52,6 +53,7 @@ const GetStartedBtn = () => {
             _hover={{bgColor: '#0055BA'}}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
+            className={style.getStarted}
         >
             <Box 
                 as='span' 
@@ -74,6 +76,7 @@ const ContactSalesBtn = () => {
             color='#353535' 
             py='6' 
             mr='4'
+            className={style.contactSales}
             borderRadius='10px'
             _hover={{bgColor: '#F5F5F5'}}
             onMouseEnter={() => setIsHovering(true)}
@@ -96,9 +99,7 @@ const HeroSection = () => {
 
     return (
         <Box 
-            display='grid' 
-            gridTemplateColumns='1fr 1fr' 
-            columnGap='40px'
+            className={style.heroSection}
             style={{marginTop: '100px'}}
             mb='20'
         >
@@ -107,25 +108,23 @@ const HeroSection = () => {
                 <Heading 
                     as='h1'
                     pt='10'
-                    fontSize='70px'
+                    className={style.heading}
                 >
                     Reliably access bank accounts
                 </Heading>
                 <Text 
-                    fontSize='22px' 
                     fontWeight='500' 
                     letterSpacing='1.3px'
                     style={{marginBlockStart: '35px', marginBlockEnd: '50px'}} 
+                    className={style.description}
                 >
                     Mono helps businesses to access high-quality
                     financial data and direct bank payments.
                 </Text>
-                <Flex>
+                <Flex className={style.btnContainer}>
                     <GetStartedBtn />
                     <ContactSalesBtn />
                 </Flex>
-            </Box>
-            <Box>
             </Box>
         </Box>
     )

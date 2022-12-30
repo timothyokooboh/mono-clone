@@ -1,0 +1,79 @@
+div.heroSection {
+    width: 50%;
+}
+
+h1.heading {
+    font-size: 70px;
+}
+
+p.description {
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 1300px) {
+    h1.heading {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div.heroSection {
+        width: 100%;
+    }
+
+    h1.heading {
+        font-size: 40px;
+    }
+
+    p.description {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h1.heading {
+        font-size: 30px;
+    }
+
+    p.description {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    h1.heading {
+        font-size: 22px;
+    }
+
+    p.description {
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    button.getStarted {
+        padding-block: 12px;
+        
+    }
+    button.contactSales {
+        padding-block: 12px;
+        
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    button.getStarted {
+        font-size: 12px; 
+    }
+    button.contactSales {
+        font-size: 12px; 
+    }
+}
+
+@media only screen and (max-width: 382px) {
+    div.btnContainer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
