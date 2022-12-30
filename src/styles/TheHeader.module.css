@@ -9,6 +9,14 @@ button.menuBtn {
 
 
 @media only screen and (max-width: 1025px) {
+    button.signInBtn,
+    div.menuLinks {
+        display: none;
+    }
+    button.menuBtn {
+        display: block;
+    }
+
     .fixedNav {
         position: fixed;
         top: 0;
@@ -20,14 +28,3 @@ button.menuBtn {
     }
 }
 
-
-
-@media only screen and (max-width: 1025px) {
-    button.signInBtn,
-    div.menuLinks {
-        display: none;
-    }
-    button.menuBtn {
-        display: flex;
-    }
-}

@@ -2,6 +2,8 @@ div.navDrawer {
     display: block;
 }
 
+
+
 @media only screen and (min-width: 1025px) {
     div.navDrawer {
         display: none;
@@ -17,5 +19,11 @@ div.navDrawer {
 @media only screen and (max-width: 500px) {
     div.mobileMenuList {
         width: 90%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    div.listSection {
+        grid-template-columns: 1fr;
     }
 }

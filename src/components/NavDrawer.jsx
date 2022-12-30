@@ -4,13 +4,13 @@ import {AiOutlineClose } from 'react-icons/ai'
 
 const NavDrawer = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
     return (
-        <Box position='relative' overflow='scroll' className={style.navDrawer} >
+        <Box position='relative' overflow='scroll' className={style.navDrawer}>
             <Box 
                 bgColor='#fff' 
                 height={isNavDrawerOpen ? '100vh' : 0}
                 width='100vw' 
                 position='fixed' 
-                top='60px' 
+                top='55px' 
                 left='0' 
                 zIndex='999'
                 overflow-y='scroll'
@@ -26,17 +26,16 @@ const NavDrawer = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                     alignItems='center'
                     pb={isNavDrawerOpen ? '40' : 0}
                 >
-
-                
                     <Flex width='60%' mt='20' flexDirection='column' justifyContent='center' className={style.mobileMenuList}>
                         <Box mb='8'>
                             <Text color='#848484' fontSize='14px'>Why Mono</Text>
                             <Box 
                                 display='grid' 
                                 gridTemplateColumns='1fr 1fr'
+                                justifyContent='space-between'
                                 columnGap='40px;'
                                 py='5'
-                                
+                                className={style.listSection}
                             >
                                 <Flex alignItems='center' mb='2'>
                                     <Img src='../why-mono.svg' width='25px' mr='3' />
@@ -62,6 +61,7 @@ const NavDrawer = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                                 gridTemplateColumns='1fr 1fr'
                                 columnGap='40px;'
                                 py='5'
+                                className={style.listSection}
                             >
                                 <Flex alignItems='center' mb='2'>
                                     <Img src='../connect.svg' width='25px' mr='3' />
@@ -99,6 +99,7 @@ const NavDrawer = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                                 gridTemplateColumns='1fr 1fr'
                                 columnGap='40px;'
                                 py='5'
+                                className={style.listSection}
                             >
                                 <Flex alignItems='center' mb='2'>
                                     <Img src='../connect.svg' width='25px' mr='3' />

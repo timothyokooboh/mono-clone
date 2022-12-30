@@ -21,12 +21,14 @@ import {
    
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MENU_ITEMS from '../config/menuItems'
 import { FiMenu } from "react-icons/fi";
 import style from '../styles/TheHeader.module.css'
 import HamburgerMenu from "./HamburgerMenu";
 import { AiOutlineClose } from "react-icons/ai";
+import { HamburgerSqueeze } from 'react-animated-burgers'
+
 const MenuGridStyle = { 
     display: 'grid', 
     gridTemplateColumns: '1fr 1fr', 
@@ -36,12 +38,25 @@ const MenuGridStyle = {
 }
 
 const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
+    const rootRef = useRef(null)
+
+    useEffect(() => {
+        rootRef.current.addEventListener('wheel', (e) => {
+            if (isNavDrawerOpen) {
+                e.preventDefault();
+                e.stopPropagation();
+    
+                return false;
+            }
+        })
+    }, [isNavDrawerOpen])
     return (
         <Flex 
             justifyContent='space-between' 
             alignItems='center'
             py='5'
-            className={isNavDrawerOpen ? style.fixedNav : ''}
+            ref={rootRef}
+           
         >
             <Img src='../logo.svg' />
              <Flex alignItems='center' className={style.menuLinks}>
@@ -62,6 +77,8 @@ const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                                 border='1px solid hsla(0,0%,89.8%,.75)'
                                 width='fit-content' 
                                 minWidth='250px'
+                                opacity='ease-out .4s'
+                                borderRadius='15px'
                             >
                                 <PopoverArrow />
                                 <PopoverBody  
@@ -108,8 +125,15 @@ const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
             >
                 Sign in
             </Button>
+
+            <HamburgerSqueeze 
+                isActive={isNavDrawerOpen} 
+                onClick={() => setIsNavDrawerOpen((prev) => !prev)}
+                className={style.menuBtn}
+                buttonWidth={25}
+            />
             
-            {isNavDrawerOpen ? <IconButton 
+            {/* {isNavDrawerOpen ? <IconButton 
                 aria-label='menu'
                 icon={<AiOutlineClose/>}
                 className={style.menuBtn}
@@ -121,7 +145,7 @@ const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                 className={style.menuBtn}
                 variant='ghost'
                 onClick={() => setIsNavDrawerOpen(true)}
-            /> }
+            /> } */}
         </Flex>
 
     )
