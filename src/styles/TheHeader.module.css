@@ -14,7 +14,7 @@ button.menuBtn {
         display: none;
     }
     button.menuBtn {
-        display: flex;
+        display: block;
     }
 
     .fixedNav {

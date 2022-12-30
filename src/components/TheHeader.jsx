@@ -27,6 +27,8 @@ import { FiMenu } from "react-icons/fi";
 import style from '../styles/TheHeader.module.css'
 import HamburgerMenu from "./HamburgerMenu";
 import { AiOutlineClose } from "react-icons/ai";
+import { HamburgerSqueeze } from 'react-animated-burgers'
+
 const MenuGridStyle = { 
     display: 'grid', 
     gridTemplateColumns: '1fr 1fr', 
@@ -123,8 +125,15 @@ const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
             >
                 Sign in
             </Button>
+
+            <HamburgerSqueeze 
+                isActive={isNavDrawerOpen} 
+                onClick={() => setIsNavDrawerOpen((prev) => !prev)}
+                className={style.menuBtn}
+                buttonWidth={25}
+            />
             
-            {isNavDrawerOpen ? <IconButton 
+            {/* {isNavDrawerOpen ? <IconButton 
                 aria-label='menu'
                 icon={<AiOutlineClose/>}
                 className={style.menuBtn}
@@ -136,7 +145,7 @@ const TheHeader = ({isNavDrawerOpen, setIsNavDrawerOpen}) => {
                 className={style.menuBtn}
                 variant='ghost'
                 onClick={() => setIsNavDrawerOpen(true)}
-            /> }
+            /> } */}
         </Flex>
 
     )
